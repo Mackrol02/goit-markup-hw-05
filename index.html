@@ -21,7 +21,7 @@
           <a href="index.html" class="studio">Agencja</a>
         </div>
           <div class="group_1">
-          <a href="portfolio.html" class="color-black"> Portfolio </a>
+          <a href="portfolio.html" class="color-black_in"> Portfolio </a>
         </div>
         <div class="group_1">
           <a href="" class="nav-black">Contacts</a>
@@ -38,7 +38,7 @@
           <p class="button">
             <h1 class="title_h1">EFFECTIVE SOLUTIONS FOR YOUR BUSINESS</h1></p>
             <div class="container">
-            <input class="button1" type="submit" value="Request our service" />
+            <button data-modal-open class="button1">Request our service</button>
             </div>
         </div>
         <div class="width">
@@ -88,6 +88,7 @@
             width="370px"
             height="294px"
           />
+          <div class="label"><div class="cen_label">DESKTOP APPS</div></div>
         </div>
         <div class="box2">
           <img
@@ -96,6 +97,7 @@
             width="370px"
             height="294px"
           />
+          <div class="label"><div class="cen_label">MOBILE APPS</div></div>
         </div>
         <div class="box3">
           <img
@@ -104,6 +106,7 @@
             width="370px"
             height="294px"
           />
+          <div class="label"><div class="cen_label">DESIGN SOLUTION</div></div>
         </div>
       </div>
       </div>
@@ -231,5 +234,11 @@
         </footer>
       </div>
     </div>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="button-close" data-modal-close>X</button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

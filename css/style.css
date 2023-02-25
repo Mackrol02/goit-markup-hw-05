@@ -13,6 +13,7 @@
   --color-body: #e5e5e5;
   --color-icon: #afb1b8;
   --color-foticon: rgba(255, 255, 255, 0.1);
+  --color-overlay: rgba(33, 150, 243, 0.9);
 }
 .card1,
 .card2,
@@ -60,15 +61,18 @@ body {
 .studio:hover,
 .studio1:hover,
 .color-black:hover,
+.color-black_in:hover,
 .nav-black:hover {
   color: var(--blue-color);
   cursor: pointer;
   font-weight: 500;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .size {
   font-size: 14px;
 }
-.color-black {
+.color-black,
+.color-black_in {
   color: var(--blacklight-color);
 }
 .tel,
@@ -179,6 +183,7 @@ address {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter1,
 .filter2,
@@ -315,6 +320,7 @@ header {
 .linkedin:hover,
 .antenna:hover {
   fill: var(--blue-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .antenna,
@@ -343,6 +349,7 @@ header {
 .smartphon:hover,
 .envelope:hover {
   --color3: var(--blue-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .linkedin,
 .facebook,
@@ -360,6 +367,7 @@ header {
 .instagram:hover {
   --color2: var(--white-color);
   --color1: var(--blue-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .linkedin-list,
 .facebook-list,
@@ -417,6 +425,7 @@ header {
 .logo6:hover {
   --color2: var(--blue-color);
   --color4: var(--blue-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .an {
   text-align: center;
@@ -443,9 +452,11 @@ header {
 .antenna:hover {
   --color5: var(--blue-color);
   --color4: var(--blue-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .astronaut:hover {
   --color5: var(--blue-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .projet9:hover,
 .projet8:hover,
@@ -461,4 +472,119 @@ header {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
 
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal {
+  top: 20%;
+  left: 35%;
+  width: 400px;
+  height: 400px;
+  background-color: var(--white-color);
+  position: fixed;
+  z-index: 1;
+  transition: visibility, opacity, transform;
+  transition-duration: 2s;
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.is-hidden {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%) scale(0) rotate(0deg);
+}
+.button-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border-radius: 50%;
+  background-color: var(--white-color);
+  border: 1px solid var(--color-body);
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+.label {
+  background-color: rgba(47, 48, 58, 0.8);
+  text-align: center;
+  height: 70px;
+  color: var(--white-color);
+  font-size: 14px;
+  transform: translateY(-100%);
+}
+.cen_label {
+  transform: translateY(150%);
+}
+.studio::after,
+.studio:visited {
+  content: "";
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
+  background-color: var(--blue-color);
+  color: var(--blue-color);
+  display: block;
+  transform: translateY(1000%);
+}
+.color-black::after,
+.color-black:visited {
+  content: "";
+  width: 100%;
+  height: 4px;
+  color: var(--blue-color);
+  background-color: var(--blue-color);
+  display: block;
+  transform: translateY(1000%);
+}
+.projet1,
+.projet2,
+.projet3,
+.projet4,
+.projet5,
+.projet6,
+.projet7,
+.projet8,
+.projet9 {
+  position: relative;
+  overflow: hidden;
+}
+.projet1:hover .overlay,
+.projet2:hover .overlay,
+.projet3:hover .overlay,
+.projet4:hover .overlay,
+.projet5:hover .overlay,
+.projet6:hover .overlay,
+.projet7:hover .overlay,
+.projet8:hover .overlay,
+.projet9:hover .overlay {
+  transform: translateY(-29%);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-overlay);
+  color: var(--white-color);
+  font-size: 18px;
+
+  transform: translateY(100%);
+  transition: transform 250ms ease;
+}
+.overlay > p {
+  text-align: left;
+  padding-top: 50%;
+  padding-left: 24px;
+  padding-right: 24px;
 }
